@@ -1,16 +1,14 @@
-import { Text, View } from "react-native";
-import React, { Component } from "react";
+import React, { useState } from "react";
+import withCalculate from "../utils/withCalculate";
 
-export class Button extends Component {
-  render() {
-    return (
-      <div>
-        <h1>x + 1</h1>
-        <p>hasil: {nomor}</p>
-        <button onClick={handlerNomor}>tambah</button>
-      </div>
-    );
-  }
+function Button(props) {
+  return (
+    <div>
+      <h1>x + {props.counter}</h1>
+      <p>hasil: {props.nomor}</p>
+      <button onClick={props.handleNomor}>tambah</button>
+    </div>
+  );
 }
 
-export default Button;
+export default withCalculate(Button);
